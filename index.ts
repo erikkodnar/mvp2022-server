@@ -2,6 +2,11 @@ import express from "express";
 import * as socketio from "socket.io";
 import * as path from "path";
 
+type Message = {
+  time: Date;
+  text: string;
+}
+
 const app = express();
 app.set("port", process.env.PORT || 3000);
 
@@ -18,7 +23,7 @@ app.get("/", (req: any, res: any) => {
 // a websocket, log that a user has connected
 io.on("connection", function(socket: any) {
   console.log("a user connected");
-  socket.on("message", (message: string) => {
+  socket.on("message", (message: Message) => {
     console.log(message)
   })
 });
