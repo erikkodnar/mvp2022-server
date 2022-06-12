@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon -L ./bin/www",
+    "start": "nodemon -L ./index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "create-db": "psql -U postgres -f db/schema.sql",
     "seed": "psql -U postgres -f db/schema.sql && psql -U postgres -f db/seed.sql"
